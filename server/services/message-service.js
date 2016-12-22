@@ -10,7 +10,7 @@ class MessageUtil {
 
 
     static formatMessage(msg) {
-        msg = "<<" + msg + ">>";
+        msg = "__" + msg + "__";
         return msg;
     }
 }
