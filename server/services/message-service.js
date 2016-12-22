@@ -7,8 +7,10 @@ class MessageUtil {
     constructor() {
         this.conversation = new Watson({});
     }
+
+
     static formatMessage(msg) {
-        msg = "--" + msg + "--";
+        msg = "<<" + msg + ">>";
         return msg;
     }
 }
