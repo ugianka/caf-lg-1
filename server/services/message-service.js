@@ -1,16 +1,16 @@
 "use strict";
-//import { conversation } from 'watson-developer-cloud/conversation/v1';
+const watson_developer_cloud_1 = require("watson-developer-cloud");
 //declare module "watson-developer-cloud";
-var Watson = require('watson-developer-cloud');
+//var Watson = require('watson-developer-cloud')
 "use strict";
 class MessageUtil {
-    constructor() {
-        this.conversation = new Watson({});
-    }
-
-
     static formatMessage(msg) {
-        msg = "__" + msg + "__";
+        let conv = new watson_developer_cloud_1.ConversationV1({
+            url: process.env['WATSON_CONVERSATION_URL'] || 'https://gateway.watsonplatform.net/conversation/api',
+            version_date: '2016-09-20',
+            version: 'v1'
+        });
+        msg = ".." + msg + "..";
         return msg;
     }
 }
