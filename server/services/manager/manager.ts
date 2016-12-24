@@ -33,8 +33,8 @@ export class Orchestrator {
         var workspace = process.env['WORKSPACE_ID'];
         let payload = {
             workspace_id: workspace,
-            context: input.conversationContext,
-            input: input.question
+            context: input.conversationContext || {},
+            input: { "text": input.question }
         };
         return new Promise<any>((resolve, reject) => {
             conversationService.message(payload, function (err: any, data: any) {
